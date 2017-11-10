@@ -8,8 +8,7 @@ import {
   Map as makeMap,
   OrderedMap as makeOrderedMap,
 } from 'immutable';
-
-import { nowInSecondsPrecision } from 'weaveworks-ui-components/lib/utils/time';
+import moment from 'moment';
 
 import ActionTypes from '../constants/action-types';
 import {
@@ -39,6 +38,8 @@ const error = debug('scope:error');
 // Helpers
 
 const topologySorter = topology => topology.get('rank');
+
+const nowInSecondsPrecision = moment().startOf('second');
 
 // Initial values
 
